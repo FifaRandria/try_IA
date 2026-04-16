@@ -16,16 +16,15 @@ export async function POST(req) {
     }
 
     const prompts = {
-      enfant: `Explique ${topic} à ${name} comme à un enfant de 5 ans avec des exemples simples.`,
-      debutant: `Explique ${topic} à ${name} simplement pour un débutant.`,
-      intermediaire: `Explique ${topic} à ${name} avec plus de détails techniques.`
+      enfant: `Explique ${topic} comme à un enfant de 5 ans avec des exemples simples, prend une exemple concret.`,
+      debutant: `Explique ${topic} simplement pour un débutant, prend une exemple concret`,
+      intermediaire: `Explique ${topic} avec plus de détails techniques, prend une exemple concret`
     }
 
     if (!prompts[level]) {
       return Response.json({ error: 'Invalid level. Must be: enfant, debutant, or intermediaire' }, { status: 400 })
     }
 
-    // 🔥 Appel IA (OpenRouter)
     const models = [
       "mistralai/mistral-7b-instruct",
       "qwen/qwen-2.5-7b-instruct",
