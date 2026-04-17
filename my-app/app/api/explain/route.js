@@ -18,7 +18,7 @@ export async function POST(req) {
     const prompts = {
       enfant: `Explique ${topic} comme à un enfant de 5 ans avec des exemples simples, prend une exemple concret.`,
       debutant: `Explique ${topic} simplement pour un débutant, prend une exemple concret`,
-      intermediaire: `Explique ${topic} avec plus de détails techniques, prend une exemple concret`
+      avance: `Explique ${topic} avec plus de détails techniques, prend une exemple concret`
     }
 
     if (!prompts[level]) {
